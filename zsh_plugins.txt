@@ -1,0 +1,13 @@
+# OMZ base library — sensible defaults (completion, history, keybindings)
+# without loading the full OMZ framework
+ohmyzsh/ohmyzsh path:lib
+
+# OMZ plugins
+ohmyzsh/ohmyzsh path:plugins/git
+ohmyzsh/ohmyzsh path:plugins/macos
+ohmyzsh/ohmyzsh path:plugins/dotenv
+
+# Third-party — keep zsh-syntax-highlighting LAST
+zsh-users/zsh-completions
+zsh-users/zsh-autosuggestions
+zsh-users/zsh-syntax-highlighting
