@@ -5,12 +5,11 @@ autoload -Uz compinit && compinit
 source /opt/homebrew/opt/antidote/share/antidote/antidote.zsh
 antidote load ~/.zsh_plugins.txt
 
-
 # User configuration
 DEFAULT_USER="chuck"
 
+# default NODE_ENV for Node apps run from this shell (independent of nvm)
 export NODE_ENV=development
-
 
 # Set personal aliases
 alias zshconfig="vi ~/.zshrc"
@@ -36,7 +35,6 @@ export PATH="$PATH:/Users/chuck/.cache/lm-studio/bin"
 
 # Added by Antigravity
 export PATH="/Users/chuck/.antigravity/antigravity/bin:$PATH"
-export PATH="/opt/homebrew/opt/node@24/bin:$PATH"
 export PATH="$HOME/.local/bin:$PATH"
 export PATH="/opt/homebrew/opt/mysql-client/bin:$PATH"
 

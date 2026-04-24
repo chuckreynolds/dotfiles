@@ -8,7 +8,7 @@ My macOS shell setup: zsh + antidote + Starship, plus the Homebrew packages I re
 - **antidote** — fast zsh plugin manager (replaces Oh My Zsh + Antigen)
 - **Starship** — cross-shell prompt
 - **lsd** — modern `ls` replacement
-- **nvm** + `node@24` — Node version management
+- **nvm** — Node version management (no Homebrew `node` formula; nvm owns Node)
 - Plugins: OMZ `git` / `macos` / `dotenv`, plus `zsh-completions`, `zsh-autosuggestions`, `zsh-syntax-highlighting`
 
 ## Files
@@ -30,6 +30,18 @@ cd dotfiles
 ```
 
 Then open a new terminal window. First launch clones all antidote plugins (~10–20s); subsequent launches are fast.
+
+### Node
+
+`bootstrap.sh` installs the latest LTS Node via nvm and sets it as the default. Per-project Node versions are handled via `.nvmrc` + `nvm use`.
+
+To switch later:
+
+```sh
+nvm install --lts     # install latest LTS
+nvm install 22        # install a specific major
+nvm alias default 22  # change global default
+```
 
 ## Updating this repo from the live config
 

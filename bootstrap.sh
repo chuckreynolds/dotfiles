@@ -24,7 +24,18 @@ fi
 echo "==> Running brew bundle (this takes a while)"
 brew bundle --file="$DOTFILES/Brewfile"
 
-# 3. Symlink zshrc and zsh_plugins.txt into $HOME, backing up any existing files
+# 3. Set up nvm and install the latest LTS Node
+if [ -s "/opt/homebrew/opt/nvm/nvm.sh" ]; then
+  echo "==> Installing latest LTS Node via nvm"
+  export NVM_DIR="$HOME/.nvm"
+  mkdir -p "$NVM_DIR"
+  # shellcheck disable=SC1091
+  . "/opt/homebrew/opt/nvm/nvm.sh"
+  nvm install --lts
+  nvm alias default "lts/*"
+fi
+
+# 4. Symlink zshrc and zsh_plugins.txt into $HOME, backing up any existing files
 link_file() {
   local src="$1" dest="$2"
   if [ -e "$dest" ] && [ ! -L "$dest" ]; then
