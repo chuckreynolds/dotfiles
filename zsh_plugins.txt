@@ -6,8 +6,13 @@ ohmyzsh/ohmyzsh path:lib
 ohmyzsh/ohmyzsh path:plugins/git
 ohmyzsh/ohmyzsh path:plugins/macos
 ohmyzsh/ohmyzsh path:plugins/dotenv
+ohmyzsh/ohmyzsh path:plugins/extract
+ohmyzsh/ohmyzsh path:plugins/npm
 
-# Third-party — keep zsh-syntax-highlighting LAST
+# Third-party — keep zsh-syntax-highlighting near the end
 zsh-users/zsh-completions
 zsh-users/zsh-autosuggestions
 zsh-users/zsh-syntax-highlighting
+
+# Must load AFTER zsh-syntax-highlighting
+ohmyzsh/ohmyzsh path:plugins/history-substring-search
